@@ -1,7 +1,5 @@
 grammar Calculator ;
 
-root: expression ;
-
 expression
     :   left=expression (MUL|DIV) right=expression # MulDiv
     |   left=expression (ADD|SUB) right=expression # AddSub
