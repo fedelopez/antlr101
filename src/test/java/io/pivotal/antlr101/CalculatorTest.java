@@ -8,7 +8,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 public class CalculatorTest {
 
     @Test
-    public void shouldReturnAnInteger() throws Exception {
+    public void shouldReturnAnInteger() {
         assertThat(calculate("123")).isEqualTo(123);
     }
 
