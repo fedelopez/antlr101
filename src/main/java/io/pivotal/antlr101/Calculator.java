@@ -10,7 +10,7 @@ import org.antlr.v4.runtime.tree.ParseTree;
 import javax.swing.*;
 import java.util.Arrays;
 
-public class Calculator extends CalculatorBaseVisitor<Integer> {
+class Calculator extends CalculatorBaseVisitor<Integer> {
 
     static Integer calculate(String expression) {
         CalculatorParser parser = createParser(expression);
@@ -26,13 +26,13 @@ public class Calculator extends CalculatorBaseVisitor<Integer> {
     }
 
     public static void main(String[] args) {
-        String expression = "42";
+        String expression = "3 * 2 +  1";
         CalculatorParser parser = createParser(expression);
         ParseTree tree = parser.expression();
         System.out.println("String tree = " + tree.toStringTree());
 
         //show AST in GUI
-        JFrame frame = new JFrame("Antlr AST");
+        JFrame frame = new JFrame("AST for expression: " + expression);
         JPanel panel = new JPanel();
         TreeViewer treeViewer = new TreeViewer(Arrays.asList(parser.getRuleNames()), tree);
         treeViewer.setScale(1.5);//scale a little
@@ -40,6 +40,7 @@ public class Calculator extends CalculatorBaseVisitor<Integer> {
         frame.add(panel);
         frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         frame.setSize(640, 480);
+        frame.setLocationRelativeTo(null);
         frame.setVisible(true);
     }
 
