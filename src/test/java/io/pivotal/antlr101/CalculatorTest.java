@@ -32,8 +32,8 @@ public class CalculatorTest {
 
     @Test
     public void shouldMultiplyAndDivideNumbers() {
-        String expression = "2 * 5 / 2";
-        assertThat(calculate(expression)).isEqualTo(5);
+        String expression = "2 * 5 / 2 + 1";
+        assertThat(calculate(expression)).isEqualTo(6);
     }
 
    @Test
