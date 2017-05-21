@@ -33,14 +33,10 @@ class Calculator extends CalculatorBaseVisitor<Integer> {
 
         //show AST in GUI
         JFrame frame = new JFrame("AST for expression: " + expression);
-        JPanel panel = new JPanel();
         TreeViewer treeViewer = new TreeViewer(Arrays.asList(parser.getRuleNames()), tree);
         treeViewer.setScale(1.5);//scale a little
-        panel.add(treeViewer);
-        frame.add(panel);
-        frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        frame.add(treeViewer);
         frame.setSize(640, 480);
-        frame.setLocationRelativeTo(null);
         frame.setVisible(true);
     }
 
