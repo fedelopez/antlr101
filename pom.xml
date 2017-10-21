@@ -3,13 +3,13 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>io.pivotal</groupId>
+    <groupId>cat.pseudocodi</groupId>
     <artifactId>antlr-101</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <packaging>jar</packaging>
 
     <name>antlr-101</name>
-    <description>Demo project for Pivotal-CoreLogic Guild</description>
+    <description>Demo project for showcasing how to build a calculator from scratch</description>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>

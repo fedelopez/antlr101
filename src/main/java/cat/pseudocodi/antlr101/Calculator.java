@@ -1,14 +1,10 @@
-package io.pivotal.antlr101;
+package cat.pseudocodi.antlr101;
 
-import org.antlr.v4.gui.TreeViewer;
 import org.antlr.v4.runtime.CharStream;
 import org.antlr.v4.runtime.CharStreams;
 import org.antlr.v4.runtime.CommonTokenStream;
 import org.antlr.v4.runtime.TokenStream;
 import org.antlr.v4.runtime.tree.ParseTree;
-
-import javax.swing.*;
-import java.util.Arrays;
 
 class Calculator extends CalculatorBaseVisitor<Integer> {
 
@@ -18,26 +14,11 @@ class Calculator extends CalculatorBaseVisitor<Integer> {
         return new Calculator().visit(tree);
     }
 
-    private static CalculatorParser createParser(String expression) {
+    static CalculatorParser createParser(String expression) {
         CharStream stream = CharStreams.fromString(expression);
         CalculatorLexer lexer = new CalculatorLexer(stream);
         TokenStream tokenStream = new CommonTokenStream(lexer);
         return new CalculatorParser(tokenStream);
-    }
-
-    public static void main(String[] args) {
-        String expression = "3 * 2 +  1";
-        CalculatorParser parser = createParser(expression);
-        ParseTree tree = parser.expression();
-        System.out.println("String tree = " + tree.toStringTree());
-
-        //show AST in GUI
-        JFrame frame = new JFrame("AST for expression: " + expression);
-        TreeViewer treeViewer = new TreeViewer(Arrays.asList(parser.getRuleNames()), tree);
-        treeViewer.setScale(1.5);//scale a little
-        frame.add(treeViewer);
-        frame.setSize(640, 480);
-        frame.setVisible(true);
     }
 
     public Integer visitInt(CalculatorParser.IntContext ctx) {

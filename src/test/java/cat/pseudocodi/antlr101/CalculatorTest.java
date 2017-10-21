@@ -1,8 +1,8 @@
-package io.pivotal.antlr101;
+package cat.pseudocodi.antlr101;
 
 import org.junit.Test;
 
-import static io.pivotal.antlr101.Calculator.calculate;
+import static cat.pseudocodi.antlr101.Calculator.calculate;
 import static org.assertj.core.api.Assertions.assertThat;
 
 public class CalculatorTest {
