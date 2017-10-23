@@ -1,4 +1,4 @@
-package io.pivotal.antlr101;
+package cat.pseudocodi.antlr101;
 
 class Calculator {
 
