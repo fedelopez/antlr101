@@ -37,15 +37,15 @@ public class CalculatorTest {
     }
 
     @Test
-    public void shouldUseParenthesis() {
+    public void shouldParseParenthesis() {
         String expression = "(2 + 5) * 2";
         assertThat(calculate(expression)).isEqualTo(14);
     }
 
     @Test
     public void shouldUseNestedParenthesis() {
-        String expression = "(1 + (1 + (1)))";
-        assertThat(calculate(expression)).isEqualTo(3);
+        String expression = "(2 * (6 / (1 + 1)))";
+        assertThat(calculate(expression)).isEqualTo(6);
     }
 
     @Test
