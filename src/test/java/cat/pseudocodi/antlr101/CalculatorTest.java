@@ -10,6 +10,7 @@ public class CalculatorTest {
     @Test
     public void shouldParseIntegers() {
         assertThat(calculate("123")).isEqualTo(123);
+        assertThat(calculate("42")).isEqualTo(42);
     }
 
     @Test
@@ -43,7 +44,7 @@ public class CalculatorTest {
     }
 
     @Test
-    public void shouldUseNestedParenthesis() {
+    public void shouldParseNestedParenthesis() {
         String expression = "(2 * (6 / (1 + 1)))";
         assertThat(calculate(expression)).isEqualTo(6);
     }
@@ -52,11 +53,5 @@ public class CalculatorTest {
     public void shouldCalculateSquares() {
         String expression = "sqr(2) + sqr(3)";
         assertThat(calculate(expression)).isEqualTo(13);
-    }
-
-    @Test
-    public void shouldCalculateCubes() {
-        String expression = "cube(1 + 1)";
-        assertThat(calculate(expression)).isEqualTo(8);
     }
 }
